@@ -9,7 +9,7 @@ public class Fax extends ImprimanteDecorateur {
 
     @Override
     public void imprimer() {
-        System.out.println("La fonction imprimer du Fax est activer");
+        System.out.println("La fonctioen imprimer du Fax est activer");
         imprimante.imprimer();
     }
 }
