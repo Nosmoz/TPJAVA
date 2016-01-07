@@ -6,7 +6,9 @@ import documents.Livre;
 import emprunteurs.Emprunteur;
 import emprunteurs.EmprunteurCarteMusique;
 import emprunteurs.EmprunteurOr;
+import politiquesEmprunt.EmpruntDateFixeCarte;
 import politiquesEmprunt.EmpruntSelonTypeDoc;
+import politiquesEmprunt.EmpruntSelonTypeDocStatus;
 import politiquesEmprunt.PolitiqueEmprunt;
 
 import java.util.ArrayList;
@@ -31,7 +33,7 @@ public class Application {
     } // Constitutionn
 
     public static void emprunt(ArrayList<Document> aEmprunter) {
-        PolitiqueEmprunt politique = new EmpruntSelonTypeDoc();
+        PolitiqueEmprunt politique = new EmpruntDateFixeCarte(new EmprunteurCarteMusique());
 
         for (Document doc : aEmprunter) {
             doc.emprunter(politique);
@@ -39,9 +41,6 @@ public class Application {
     }
 
     public static void main(String[] args) {
-        Emprunteur or = new EmprunteurOr();
-        Emprunteur carteMusique = new EmprunteurCarteMusique();
-
         Application.constitution();
 
         ArrayList<Document> panier = new ArrayList<>();

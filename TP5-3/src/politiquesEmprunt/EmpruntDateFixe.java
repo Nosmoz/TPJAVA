@@ -6,7 +6,7 @@ import documents.*;
  */
 public class EmpruntDateFixe implements PolitiqueEmprunt {
 
-    private final int TIME_DAY = 15;
+    public static final int TIME_DAY = 15;
 
     @Override
     public void emprunter(Film film) {

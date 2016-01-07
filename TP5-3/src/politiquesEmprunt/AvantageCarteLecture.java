@@ -26,9 +26,7 @@ public class AvantageCarteLecture implements AvantageEmprunteur {
     }
 
     @Override
-    public int emprunter(EmprunteurCarteLecture emp) {
-        return 5;
-    }
+    public int emprunter(EmprunteurCarteLecture emp) { return 5; }
 
     @Override
     public int emprunter(EmprunteurCarteMusique emp) {
