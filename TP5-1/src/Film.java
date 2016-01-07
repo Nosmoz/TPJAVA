@@ -1,0 +1,19 @@
+/**
+ * Created by h13002021 on 07/01/16.
+ */
+public class Film extends Document {
+
+    public Film(String titre) {
+        this.titre = titre;
+    }
+
+    @Override
+    public String toString() {
+        String str = "Film " + titre +" : ";
+        if (dateRetour != null)
+            str += "rendre le : " + dateRetour.getTime();
+        else
+            str += "n'est pas emprunté.";
+        return str;
+    }
+}
