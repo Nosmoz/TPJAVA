@@ -21,16 +21,16 @@ public class EmpruntDateFixeCarte implements PolitiqueEmprunt {
 
     @Override
     public void emprunter(Film film) {
-        film.setDateRetour(CalculDate.ajout(EmpruntDateFixe.TIME_DAY));
+        film.setDateRetour(CalculDate.ajout(EmpruntDateFixe.TIME_DAY+emprunteur.getBonus(new AvantageStatus())));
     }
 
     @Override
     public void emprunter(CD cd) {
-        cd.setDateRetour(CalculDate.ajout(EmpruntDateFixe.TIME_DAY+emprunteur.getBonus(new AvantageCarteMusique())));
+        cd.setDateRetour(CalculDate.ajout(EmpruntDateFixe.TIME_DAY+emprunteur.getBonus(new AvantageStatus())+emprunteur.getBonus(new AvantageCarteMusique())));
     }
 
     @Override
     public void emprunter(Livre livre) {
-        livre.setDateRetour(CalculDate.ajout(EmpruntDateFixe.TIME_DAY+emprunteur.getBonus(new AvantageCarteLecture())));
+        livre.setDateRetour(CalculDate.ajout(EmpruntDateFixe.TIME_DAY+emprunteur.getBonus(new AvantageStatus())+emprunteur.getBonus(new AvantageCarteMusique())));
     }
 }
